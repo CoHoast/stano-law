@@ -95,54 +95,70 @@ export default function DashboardPage() {
             <Link href="/dashboard/matters" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">View all →</Link>
           </div>
           <div className="p-5 space-y-4">
-            {[
-              { 
-                icon: '✓', 
-                iconBg: 'bg-emerald-100', 
-                title: 'Look-Back Analysis Complete',
-                desc: 'Margaret Thompson — 58 statements processed, 7 items flagged',
-                time: '2 hours ago'
-              },
-              { 
-                icon: '📄', 
-                iconBg: 'bg-blue-100', 
-                title: 'Documents Uploaded',
-                desc: 'Dorothy & James Miller — 6 new bank statements received',
-                time: '3 hours ago'
-              },
-              { 
-                icon: '🎖️', 
-                iconBg: 'bg-emerald-100', 
-                title: 'VA Screening Complete',
-                desc: 'Robert Williams — Likely eligible, $2,295/mo estimated benefit',
-                time: '5 hours ago'
-              },
-              { 
-                icon: '⚠️', 
-                iconBg: 'bg-amber-100', 
-                title: 'Missing Documents',
-                desc: 'William & Nancy Clark — 14 bank statements still needed',
-                time: '1 day ago'
-              },
-              { 
-                icon: '📋', 
-                iconBg: 'bg-blue-100', 
-                title: 'Estate Inventory Updated',
-                desc: 'Estate of Harold Chen — 42 assets identified, $847,250 net',
-                time: '1 day ago'
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4">
-                <div className={`w-10 h-10 ${item.iconBg} rounded-lg flex items-center justify-center text-lg flex-shrink-0`}>
-                  {item.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-slate-900">{item.title}</div>
-                  <div className="text-sm text-slate-500">{item.desc}</div>
-                </div>
-                <div className="text-xs text-slate-400 whitespace-nowrap">{item.time}</div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
               </div>
-            ))}
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Look-Back Analysis Complete</div>
+                <div className="text-sm text-slate-500">Margaret Thompson — 58 statements processed, 7 items flagged</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">2 hours ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-indigo-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Documents Uploaded</div>
+                <div className="text-sm text-slate-500">Dorothy & James Miller — 6 new bank statements received</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">3 hours ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-violet-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">VA Screening Complete</div>
+                <div className="text-sm text-slate-500">Robert Williams — Likely eligible, $2,295/mo estimated benefit</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">5 hours ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-amber-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Missing Documents</div>
+                <div className="text-sm text-slate-500">William & Nancy Clark — 14 bank statements still needed</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">1 day ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Estate Inventory Updated</div>
+                <div className="text-sm text-slate-500">Estate of Harold Chen — 42 assets identified, $847,250 net</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">1 day ago</div>
+            </div>
           </div>
         </div>
 
@@ -155,8 +171,10 @@ export default function DashboardPage() {
             </div>
             <div className="p-4 space-y-3">
               <Link href="/dashboard/lookback" className="flex items-center gap-4 p-3 rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center text-white text-lg">
-                  📊
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-slate-900">New Look-Back Analysis</div>
@@ -165,8 +183,10 @@ export default function DashboardPage() {
               </Link>
               
               <Link href="/dashboard/portal" className="flex items-center gap-4 p-3 rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center text-white text-lg">
-                  📨
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-slate-900">Send Document Request</div>
@@ -175,8 +195,10 @@ export default function DashboardPage() {
               </Link>
               
               <Link href="/dashboard/va-screener" className="flex items-center gap-4 p-3 rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center text-white text-lg">
-                  🎖️
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-slate-900">VA Eligibility Screen</div>
@@ -185,8 +207,10 @@ export default function DashboardPage() {
               </Link>
               
               <Link href="/dashboard/estate" className="flex items-center gap-4 p-3 rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center text-white text-lg">
-                  📋
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                  </svg>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-slate-900">Start Estate Inventory</div>

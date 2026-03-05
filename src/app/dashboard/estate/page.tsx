@@ -78,8 +78,10 @@ export default function EstatePage() {
             <div key={estate.id} className="p-5 hover:bg-slate-50/50 transition">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center text-white text-lg">
-                    📋
+                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                    <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                    </svg>
                   </div>
                   <div>
                     <div className="font-medium text-slate-900">Estate of {estate.decedent}</div>
@@ -137,21 +139,54 @@ export default function EstatePage() {
         </div>
         <div className="p-5">
           <div className="grid sm:grid-cols-4 gap-4">
-            {[
-              { schedule: 'A', name: 'Real Estate', desc: 'Land, homes, commercial property', icon: '🏠' },
-              { schedule: 'B', name: 'Stocks & Bonds', desc: 'Securities, investments', icon: '📈' },
-              { schedule: 'C', name: 'Bank Accounts', desc: 'Checking, savings, CDs', icon: '🏦' },
-              { schedule: 'D', name: 'Other Personal', desc: 'Vehicles, jewelry, etc.', icon: '💎' },
-            ].map((cat) => (
-              <div key={cat.schedule} className="p-4 border border-slate-200 rounded-lg">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">{cat.icon}</span>
-                  <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Schedule {cat.schedule}</span>
+            <div className="p-4 border border-slate-200 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <svg width="16" height="16" className="text-indigo-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                  </svg>
                 </div>
-                <h3 className="font-semibold text-slate-900">{cat.name}</h3>
-                <p className="text-sm text-slate-500">{cat.desc}</p>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Schedule A</span>
               </div>
-            ))}
+              <h3 className="font-semibold text-slate-900">Real Estate</h3>
+              <p className="text-sm text-slate-500">Land, homes, commercial property</p>
+            </div>
+            <div className="p-4 border border-slate-200 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                  <svg width="16" height="16" className="text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Schedule B</span>
+              </div>
+              <h3 className="font-semibold text-slate-900">Stocks & Bonds</h3>
+              <p className="text-sm text-slate-500">Securities, investments</p>
+            </div>
+            <div className="p-4 border border-slate-200 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg width="16" height="16" className="text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Schedule C</span>
+              </div>
+              <h3 className="font-semibold text-slate-900">Bank Accounts</h3>
+              <p className="text-sm text-slate-500">Checking, savings, CDs</p>
+            </div>
+            <div className="p-4 border border-slate-200 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center">
+                  <svg width="16" height="16" className="text-violet-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Schedule D</span>
+              </div>
+              <h3 className="font-semibold text-slate-900">Other Personal</h3>
+              <p className="text-sm text-slate-500">Vehicles, jewelry, etc.</p>
+            </div>
           </div>
         </div>
       </div>

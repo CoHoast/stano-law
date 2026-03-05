@@ -90,12 +90,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-4 h-14 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
-            <svg width="18" height="18" className="text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z"/>
-            </svg>
-          </div>
-          <span className="text-lg font-bold text-slate-800">DOKit</span>
+          <img src="/dokit-logo.png" alt="DOKit" className="h-6 w-auto" />
         </div>
         <button 
           onClick={() => setSidebarOpen(true)}
@@ -125,16 +120,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="h-16 px-5 flex items-center justify-between border-b border-slate-100">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
-                <svg width="20" height="20" className="text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z"/>
-                </svg>
-              </div>
-              <div>
-                <span className="text-lg font-bold text-slate-800">DOKit</span>
-                <div className="text-xs text-slate-400">Stano Law Firm</div>
-              </div>
+            <div className="flex items-center gap-3">
+              <img src="/dokit-logo.png" alt="DOKit" className="h-8 w-auto" />
+              <div className="text-xs text-slate-400 border-l border-slate-200 pl-3">Stano Law Firm</div>
             </div>
             <button 
               onClick={() => setSidebarOpen(false)}
