@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Stano Law Firm | Parma Heights, OH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #2d6a4f;
+            --green-dark: #1b4332;
+            --green-light: #40916c;
+            --silver: #e2e8f0;
+            --white: #ffffff;
+            --cream: #f7fafc;
+            --gold-accent: #c9a227;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+        }
+
+        html, body { overflow-x: hidden; max-width: 100vw; } * { margin: 0; padding: 0; box-sizing: border-box; } img { max-width: 100%; height: auto; }
+        body { font-family: 'Source Sans 3', sans-serif; line-height: 1.7; color: var(--text-dark); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        a { text-decoration: none; color: inherit; }
+
+        header { background: var(--white); border-bottom: 1px solid var(--silver); position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { display: flex; align-items: center; gap: 16px; }
+        .logo img { height: 60px; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--green); }
+        .logo-tagline { font-size: 12px; color: var(--text-medium); text-transform: uppercase; letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; gap: 32px; }
+        nav a { font-size: 15px; font-weight: 500; color: var(--text-medium); }
+        .nav-cta { background: var(--green); color: var(--white) !important; padding: 12px 24px; border-radius: 4px; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--green); }
+
+        .page-header { background: #f8f6f3; color: #1f2937; padding: 80px 0; text-align: center; }
+        .page-header h1 { font-size: 48px; margin-bottom: 16px; color: #1f2937; }
+        .page-header p { font-size: 20px; color: #4b5563; }
+
+        .team-section { padding: 80px 0; }
+        .team-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* Team Member Card */
+        .team-member { display: grid; grid-template-columns: 250px 1fr; gap: 48px; margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--silver); align-items: start; }
+        .team-member:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .team-member.reverse { direction: rtl; }
+        .team-member.reverse > * { direction: ltr; }
+        .member-photo img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .member-content h2 { font-size: 32px; color: var(--green); margin-bottom: 4px; }
+        .member-title { font-size: 18px; color: var(--gold-accent); margin-bottom: 20px; font-weight: 600; }
+        .member-content p { color: var(--text-medium); margin-bottom: 16px; font-size: 17px; }
+        .credentials-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .credential-tag { background: var(--cream); border: 1px solid var(--silver); padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: 500; color: var(--text-dark); }
+
+        .cta { padding: 80px 0; background: var(--green); text-align: center; color: var(--white); }
+        .cta h2 { font-size: 36px; margin-bottom: 20px; }
+        .cta p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; }
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 4px; font-weight: 600; font-size: 16px; }
+        .btn-primary { background: var(--gold-accent); color: var(--green-dark); }
+
+        footer { background: var(--green-dark); color: var(--silver); padding: 60px 0 40px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+        .footer-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); margin-bottom: 20px; }
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 10px; }
+        footer a { opacity: 0.8; font-size: 15px; }
+        .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding: 20px 24px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 14px; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            .logo-text { display: none; }
+            .logo img { height: 50px; }
+            .mobile-toggle { display: flex; }
+            nav { position: absolute; top: 80px; left: 0; right: 0; background: var(--white); padding: 24px; display: none; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 16px; }
+            .team-member { grid-template-columns: 1fr; text-align: center; }
+            .team-member.reverse { direction: ltr; }
+            .member-photo img { max-width: 250px; margin: 0 auto; }
+            .credentials-list { justify-content: center; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/Stan-Law-Firm-Logo-Vector-Solid-Colors.png" alt="Stano Law Firm">
+                <div class="logo-text">
+                    <span class="logo-name">Stano Law Firm</span>
+                    <span class="logo-tagline">Elder Law & Estate Planning</span>
+                </div>
+            </a>
+            <div class="mobile-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="medicaid-planning.html">Medicaid</a></li>
+                    <li><a href="estate-planning.html">Estate Planning</a></li>
+                    <li><a href="va-benefits.html">VA Benefits</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-cta">Free Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Meet Our Team</h1>
+        <p>The dedicated professionals ready to help protect your family's future</p>
+    </section>
+
+    <section class="team-section">
+        <div class="team-inner">
+            
+            <!-- Paul J. Stano -->
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/Paul-Stano-e1572920246188.jpg" alt="Paul J. Stano">
+                </div>
+                <div class="member-content">
+                    <h2>Paul J. Stano</h2>
+                    <div class="member-title">Attorney</div>
+                    <p>Mr. Stano has some 30 years experience helping folks discover the best means possible to pay for nursing home and assisted living care, which can run as high as $10,000.00 per month. Paul and his team find solutions.</p>
+                    <p>Mr. Stano stays aware of, and intently researches, any new developments on Medicare, Medicaid, and VA Benefits. The wealth building and wealth protection strategies he designs for his clients have received rave reviews.</p>
+                    <p>Mr. Stano is the author of several books including the Consumer Guide to Paying for Nursing Home Costs; the Consumer Guide for Paying for Assisted Living; the Complete Guide to Asset Protection for Seniors; and Don't Go Broke in a Nursing Home. He is a sought after speaker, and has appeared on television and radio.</p>
+                    <div class="credentials-list">
+                        <span class="credential-tag">Certified Elder Law Attorney</span>
+                        <span class="credential-tag">NAELA Member</span>
+                        <span class="credential-tag">Ohio State Bar Association</span>
+                        <span class="credential-tag">Cleveland Metropolitan Bar</span>
+                        <span class="credential-tag">Published Author</span>
+                        <span class="credential-tag">30+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jan Wey -->
+            <div class="team-member reverse">
+                <div class="member-photo">
+                    <img src="images/jan.png" alt="Jan Wey">
+                </div>
+                <div class="member-content">
+                    <h2>Jan Wey</h2>
+                    <div class="member-title">Chief Specialist</div>
+                    <p>Jan reflects the "can do" attitude of The Stano Law Firm. As the chief specialist, she gets you ready to meet with Paul. She personally works with you on initial and follow-up appointments, and is charged with obtaining your important information and documentation.</p>
+                    <p>The result: you receive the solutions you're after ASAP. Speed with personal attention is our goal, and Jan will guide you every step of the way through your time with us.</p>
+                    <p>Jan puts you in the best position possible for success. She won't settle for anything less!</p>
+                </div>
+            </div>
+
+            <!-- Barbara Kornuc -->
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/barb.png" alt="Barbara Kornuc">
+                </div>
+                <div class="member-content">
+                    <h2>Barbara Kornuc</h2>
+                    <div class="member-title">Community Liaison</div>
+                    <p>Barbara Kornuc has a special position within the Stano Law Firm. She serves as the Community Liaison meeting with local nursing and assisted living facility staff.</p>
+                    <p>As a former long-term care staff member herself, Barb enjoys a unique relationship with these employees, and like Paul Stano stays on top of the latest healthcare trends and developments for you.</p>
+                    <p>She understands the anxieties Stano Law Firm clients face figuring out how to pay for long-term care. Barb has cared for her aging parents, and today takes great pleasure serving as an advocate if you have long-term care questions and to assist you.</p>
+                </div>
+            </div>
+
+            <!-- Bridget Palik -->
+            <div class="team-member reverse">
+                <div class="member-photo">
+                    <img src="images/bridget.png" alt="Bridget Palik">
+                </div>
+                <div class="member-content">
+                    <h2>Bridget Palik</h2>
+                    <div class="member-title">Administrator</div>
+                    <p>Bridget Palik is the friendly voice that may call to set up your appointments at The Stano Law Firm. She is also involved in working with you on your initial and follow up appointments.</p>
+                    <p>She organizes all the important documentation you need for Medicaid and makes sure Paul has all your vital information at his fingertips. This guarantees quick and accurate results when applying for benefits.</p>
+                    <p>See her in action when you visit us!</p>
+                </div>
+            </div>
+
+            <!-- Debbie Akers -->
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="images/Debbie-Akers-e1572920463972.jpg" alt="Debbie Akers">
+                </div>
+                <div class="member-content">
+                    <h2>Debbie Akers</h2>
+                    <div class="member-title">Administrative Assistant</div>
+                    <p>"I love helping people. When they call and come into the office, I feel like I'm helping my own friends and family."</p>
+                    <p>When you call Paul Stano's Law office, chances are Debbie will be the first person you talk to. Debbie's primary responsibility is to make your experience a warm and friendly one.</p>
+                    <p>She will greet you at the door and make sure that everything is in order for your meeting with Paul.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Work With Our Team?</h2>
+        <p>Schedule a free consultation to discuss your legal needs.</p>
+        <a href="https://calendly.com/stanolawfirm/15min" class="btn btn-primary">Book Free Consultation</a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <img src="images/Stan-Law-Firm-Logo-Vector-Solid-Colors.png" alt="Stano Law" style="height: 50px; filter: brightness(0) invert(1);">
+                <p style="margin-top: 16px; font-size: 15px; opacity: 0.8;">Protecting Ohio families for over 30 years.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul>
+                    <li><a href="medicaid-planning.html">Medicaid Planning</a></li>
+                    <li><a href="estate-planning.html">Estate Planning</a></li>
+                    <li><a href="va-benefits.html">VA Benefits</a></li>
+                    <li><a href="probate.html">Probate</a></li>
+                    <li><a href="special-needs.html">Special Needs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Resources</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul>
+                    <li>6650 Pearl Rd</li>
+                    <li>Parma Heights, OH 44130</li>
+                    <li><a href="tel:440-888-6448">(440) 888-6448</a></li>
+                    <li style="margin-top: 16px; display: flex; gap: 12px;">
+                        <a href="https://www.facebook.com/Stano-Law-Parma-Heights-Ohio-Elder-Law-Attorneys-63622512698" target="_blank" title="Facebook" style="opacity: 0.8;">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCRPuZVCGZeEtAcb_th6Hzxw" target="_blank" title="YouTube" style="opacity: 0.8;">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2024 Stano Law Firm. All rights reserved.</div>
+    </footer>
+
+    <script>function toggleNav() { document.getElementById('nav').classList.toggle('active'); }</script>
+</body>
+</html>
