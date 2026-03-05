@@ -70,22 +70,24 @@ export default function LookbackPage() {
       </div>
 
       {/* Active Cases */}
-      <div className="bg-white rounded-xl border border-slate-100 shadow-sm mb-8">
-        <div className="px-5 py-4 border-b border-slate-100">
-          <h2 className="font-semibold text-slate-900">Active Look-Back Cases</h2>
-        </div>
-        <div className="divide-y divide-slate-100">
-          {lookbackCases.map((case_) => (
-            <div key={case_.id} className="p-5 hover:bg-slate-50/50 transition">
-              <div className="flex items-center justify-between mb-3">
+      <div className="mb-8">
+        <h2 className="font-semibold text-slate-900 mb-4">Active Look-Back Cases</h2>
+        <div className="space-y-4">
+          {lookbackCases.map((case_, index) => (
+            <div key={case_.id} className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                    index % 3 === 0 ? 'bg-gradient-to-br from-indigo-500 to-violet-600' :
+                    index % 3 === 1 ? 'bg-gradient-to-br from-blue-500 to-cyan-500' :
+                    'bg-gradient-to-br from-violet-500 to-purple-600'
+                  }`}>
                     <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-slate-900">{case_.client}</div>
+                    <div className="font-semibold text-slate-900">{case_.client}</div>
                     <div className="text-sm text-slate-500">{case_.id}</div>
                   </div>
                 </div>
@@ -94,30 +96,30 @@ export default function LookbackPage() {
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 border-t border-slate-100">
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Statements</div>
-                  <div className="text-lg font-semibold text-slate-900">{case_.statements}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Statements</div>
+                  <div className="text-xl font-bold text-slate-900">{case_.statements}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Flagged Items</div>
-                  <div className="text-lg font-semibold text-amber-600">{case_.flagged}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Flagged Items</div>
+                  <div className="text-xl font-bold text-amber-600">{case_.flagged}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Est. Penalty</div>
-                  <div className="text-lg font-semibold text-slate-900">{case_.penalty}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Est. Penalty</div>
+                  <div className="text-xl font-bold text-slate-900">{case_.penalty}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Last Update</div>
-                  <div className="text-lg font-semibold text-slate-900">{case_.lastUpdate}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Last Update</div>
+                  <div className="text-xl font-bold text-slate-900">{case_.lastUpdate}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 mt-4">
-                <button className="px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
+              <div className="flex gap-2 pt-4 border-t border-slate-100">
+                <button className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
                   View Details
                 </button>
-                <button className="px-3 py-1.5 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
+                <button className="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
                   Export Report
                 </button>
               </div>

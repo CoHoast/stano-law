@@ -66,22 +66,22 @@ export default function VAScreenerPage() {
       </div>
 
       {/* Recent Screenings */}
-      <div className="bg-white rounded-xl border border-slate-100 shadow-sm mb-8">
-        <div className="px-5 py-4 border-b border-slate-100">
-          <h2 className="font-semibold text-slate-900">Recent Screenings</h2>
-        </div>
-        <div className="divide-y divide-slate-100">
+      <div className="mb-8">
+        <h2 className="font-semibold text-slate-900 mb-4">Recent Screenings</h2>
+        <div className="space-y-4">
           {screenings.map((s, i) => (
-            <div key={i} className="p-5 hover:bg-slate-50/50 transition">
+            <div key={i} className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                    i % 2 === 0 ? 'bg-gradient-to-br from-violet-500 to-purple-600' : 'bg-gradient-to-br from-emerald-500 to-teal-600'
+                  }`}>
                     <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-slate-900">{s.client}</div>
+                    <div className="font-semibold text-slate-900">{s.client}</div>
                     <div className="text-sm text-slate-500">Veteran: {s.veteran}</div>
                   </div>
                 </div>
@@ -90,30 +90,30 @@ export default function VAScreenerPage() {
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 border-t border-slate-100">
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Service Period</div>
-                  <div className="text-sm font-medium text-slate-900">{s.service}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Service Period</div>
+                  <div className="text-sm font-bold text-slate-900">{s.service}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Est. Benefit</div>
-                  <div className="text-sm font-medium text-emerald-600">{s.benefit}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Est. Benefit</div>
+                  <div className="text-lg font-bold text-emerald-600">{s.benefit}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Net Worth</div>
-                  <div className="text-sm font-medium text-slate-900">{s.netWorth}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Net Worth</div>
+                  <div className="text-sm font-bold text-slate-900">{s.netWorth}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Screened</div>
-                  <div className="text-sm font-medium text-slate-900">{s.date}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Screened</div>
+                  <div className="text-sm font-bold text-slate-900">{s.date}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 mt-4">
-                <button className="px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
+              <div className="flex gap-2 pt-4 border-t border-slate-100">
+                <button className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
                   View Full Report
                 </button>
-                <button className="px-3 py-1.5 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
+                <button className="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
                   Start Application
                 </button>
               </div>

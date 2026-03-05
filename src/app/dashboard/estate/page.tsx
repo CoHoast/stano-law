@@ -69,22 +69,22 @@ export default function EstatePage() {
       </div>
 
       {/* Active Estates */}
-      <div className="bg-white rounded-xl border border-slate-100 shadow-sm mb-8">
-        <div className="px-5 py-4 border-b border-slate-100">
-          <h2 className="font-semibold text-slate-900">Active Estates</h2>
-        </div>
-        <div className="divide-y divide-slate-100">
-          {estates.map((estate) => (
-            <div key={estate.id} className="p-5 hover:bg-slate-50/50 transition">
+      <div className="mb-8">
+        <h2 className="font-semibold text-slate-900 mb-4">Active Estates</h2>
+        <div className="space-y-4">
+          {estates.map((estate, index) => (
+            <div key={estate.id} className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 hover:shadow-md transition">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                    index % 2 === 0 ? 'bg-gradient-to-br from-blue-500 to-indigo-600' : 'bg-gradient-to-br from-amber-500 to-orange-600'
+                  }`}>
                     <svg width="20" height="20" className="text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-slate-900">Estate of {estate.decedent}</div>
+                    <div className="font-semibold text-slate-900">Estate of {estate.decedent}</div>
                     <div className="text-sm text-slate-500">Executor: {estate.executor} • {estate.id}</div>
                   </div>
                 </div>
@@ -93,37 +93,37 @@ export default function EstatePage() {
                 </span>
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 py-4 border-t border-slate-100">
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Assets</div>
-                  <div className="text-lg font-semibold text-slate-900">{estate.assets}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Assets</div>
+                  <div className="text-xl font-bold text-slate-900">{estate.assets}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Total Value</div>
-                  <div className="text-lg font-semibold text-emerald-600">{estate.totalValue}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Total Value</div>
+                  <div className="text-xl font-bold text-emerald-600">{estate.totalValue}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Liabilities</div>
-                  <div className="text-lg font-semibold text-red-600">{estate.liabilities}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Liabilities</div>
+                  <div className="text-xl font-bold text-red-600">{estate.liabilities}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Net Estate</div>
-                  <div className="text-lg font-semibold text-slate-900">{estate.netEstate}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Net Estate</div>
+                  <div className="text-xl font-bold text-slate-900">{estate.netEstate}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400 uppercase tracking-wider">Updated</div>
-                  <div className="text-lg font-semibold text-slate-900">{estate.updated}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Updated</div>
+                  <div className="text-xl font-bold text-slate-900">{estate.updated}</div>
                 </div>
               </div>
 
-              <div className="flex gap-2 mt-4">
-                <button className="px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
+              <div className="flex gap-2 pt-4 border-t border-slate-100">
+                <button className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-100 transition">
                   View Inventory
                 </button>
-                <button className="px-3 py-1.5 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
+                <button className="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
                   Generate Form 6.0
                 </button>
-                <button className="px-3 py-1.5 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
+                <button className="px-4 py-2 border border-slate-200 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-50 transition">
                   Export PDF
                 </button>
               </div>
