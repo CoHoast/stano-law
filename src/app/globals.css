@@ -10,43 +10,8 @@ body {
 
 /* DOKit Brand Styles */
 .gradient-bg {
-  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 50%, #f5f3ff 100%);
-  position: relative;
+  background: linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #faf8ff 100%);
   min-height: 100vh;
-}
-
-/* Subtle gradient orb - top right */
-.gradient-bg::before {
-  content: '';
-  position: fixed;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(40px);
-}
-
-/* Subtle gradient orb - bottom left */
-.gradient-bg::after {
-  content: '';
-  position: fixed;
-  bottom: -100px;
-  left: -100px;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.06) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(40px);
-}
-
-/* Ensure content is above orbs */
-.gradient-bg > * {
-  position: relative;
-  z-index: 1;
 }
 
 .glass-card {
