@@ -87,9 +87,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen gradient-bg">
-      {/* Gradient Orbs */}
-      <div className="fixed top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="fixed bottom-0 left-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Gradient Orb - multicolor like DOKit Standard, BEHIND all content */}
+      <div className="fixed top-0 right-0 w-[500px] h-[500px] pointer-events-none -z-10" style={{
+        background: 'radial-gradient(circle at 70% 30%, rgba(236,72,153,0.3) 0%, rgba(251,146,60,0.25) 20%, rgba(250,204,21,0.2) 35%, rgba(74,222,128,0.15) 50%, rgba(56,189,248,0.1) 65%, rgba(168,85,247,0.08) 80%, transparent 100%)',
+        filter: 'blur(60px)',
+        transform: 'translate(20%, -20%)'
+      }} />
 
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-4 h-14 flex items-center justify-between">
