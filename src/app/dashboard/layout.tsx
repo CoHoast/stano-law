@@ -86,13 +86,40 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen gradient-bg">
-      {/* Gradient Orb - multicolor like DOKit Standard, BEHIND all content */}
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] pointer-events-none -z-10" style={{
-        background: 'radial-gradient(circle at 70% 30%, rgba(236,72,153,0.3) 0%, rgba(251,146,60,0.25) 20%, rgba(250,204,21,0.2) 35%, rgba(74,222,128,0.15) 50%, rgba(56,189,248,0.1) 65%, rgba(168,85,247,0.08) 80%, transparent 100%)',
-        filter: 'blur(60px)',
-        transform: 'translate(20%, -20%)'
-      }} />
+    <div className="min-h-screen gradient-bg relative overflow-hidden">
+      {/* Multicolor Gradient Orb - matching DOKit Standard */}
+      <div className="fixed top-0 right-0 pointer-events-none" style={{ zIndex: 0 }}>
+        {/* Pink/Magenta */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-60" style={{
+          background: 'radial-gradient(circle, rgba(236,72,153,0.6) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+        {/* Orange */}
+        <div className="absolute top-10 -right-10 w-64 h-64 rounded-full opacity-50" style={{
+          background: 'radial-gradient(circle, rgba(251,146,60,0.6) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+        {/* Yellow */}
+        <div className="absolute top-32 right-20 w-56 h-56 rounded-full opacity-50" style={{
+          background: 'radial-gradient(circle, rgba(250,204,21,0.5) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+        {/* Green */}
+        <div className="absolute top-48 right-40 w-48 h-48 rounded-full opacity-40" style={{
+          background: 'radial-gradient(circle, rgba(74,222,128,0.5) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+        {/* Cyan */}
+        <div className="absolute top-56 right-56 w-44 h-44 rounded-full opacity-40" style={{
+          background: 'radial-gradient(circle, rgba(56,189,248,0.5) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+        {/* Blue/Purple */}
+        <div className="absolute top-64 right-72 w-40 h-40 rounded-full opacity-30" style={{
+          background: 'radial-gradient(circle, rgba(168,85,247,0.5) 0%, transparent 70%)',
+          filter: 'blur(40px)'
+        }} />
+      </div>
 
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-4 h-14 flex items-center justify-between">
@@ -206,7 +233,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* Main Content */}
-      <main className="lg:pl-64 pt-14 lg:pt-0 min-h-screen">
+      <main className="lg:pl-64 pt-14 lg:pt-0 min-h-screen relative z-10">
         {children}
       </main>
     </div>
