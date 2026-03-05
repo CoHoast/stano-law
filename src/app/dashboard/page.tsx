@@ -159,6 +159,58 @@ export default function DashboardPage() {
               </div>
               <div className="text-xs text-slate-400 whitespace-nowrap">1 day ago</div>
             </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Medicaid Application Approved</div>
+                <div className="text-sm text-slate-500">Patricia Davis — Approved for coverage starting April 1</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">2 days ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-indigo-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">New Client Intake</div>
+                <div className="text-sm text-slate-500">George & Martha Washington — Medicaid planning consultation</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">2 days ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-violet-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">VA Benefits Filed</div>
+                <div className="text-sm text-slate-500">Thomas Jefferson — Aid & Attendance application submitted</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">3 days ago</div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" className="text-rose-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900">Deadline Reminder</div>
+                <div className="text-sm text-slate-500">Richard & Linda Brown — Medicaid recertification due in 14 days</div>
+              </div>
+              <div className="text-xs text-slate-400 whitespace-nowrap">3 days ago</div>
+            </div>
           </div>
         </div>
 
