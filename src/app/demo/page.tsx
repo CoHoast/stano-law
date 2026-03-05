@@ -41,7 +41,7 @@ export default function DemoPage() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Card 1: Marketing Website */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-            <div className="aspect-[4/3] overflow-hidden bg-gray-50">
+            <div className="aspect-[16/10] overflow-hidden bg-gray-50">
               <img 
                 src="/demo-marketing.png" 
                 alt="Stano Law Firm Website" 
@@ -68,7 +68,7 @@ export default function DemoPage() {
 
           {/* Card 2: Product Suite */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-            <div className="aspect-[4/3] overflow-hidden bg-gray-50">
+            <div className="aspect-[16/10] overflow-hidden bg-gray-50">
               <img 
                 src="/demo-products.png" 
                 alt="DOKit Elder Law Products" 
@@ -95,7 +95,7 @@ export default function DemoPage() {
 
           {/* Card 3: Dashboard Preview */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-            <div className="aspect-[4/3] overflow-hidden bg-gray-50">
+            <div className="aspect-[16/10] overflow-hidden bg-gray-50">
               <img 
                 src="/demo-dashboard.png" 
                 alt="Dashboard Preview" 
