@@ -87,17 +87,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen gradient-bg">
+      {/* Gradient Orbs */}
+      <div className="fixed top-0 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="fixed bottom-0 left-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-4 h-14 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-gradient-to-br from-violet-400 via-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center shadow-sm">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-white">
-              <path d="M7 3C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V9L13 3H7Z" fill="currentColor" fillOpacity="0.3"/>
-              <path d="M13 3V8C13 8.55 13.45 9 14 9H19" stroke="currentColor" strokeWidth="1.5"/>
-              <path d="M8 12H16M8 15H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
+            <svg width="18" height="18" className="text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 3C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V9L13 3H7Z" fillOpacity="0.3"/>
+              <path d="M13 3V8C13 8.55 13.45 9 14 9H19" fill="none" stroke="currentColor" strokeWidth="1.5"/>
             </svg>
           </div>
-          <span className="font-bold text-slate-800">DOKit</span>
+          <span className="text-lg font-bold text-slate-800">DOKit</span>
         </div>
         <button 
           onClick={() => setSidebarOpen(true)}
@@ -127,18 +130,17 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="h-16 px-5 flex items-center justify-between border-b border-slate-100">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-violet-400 via-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M7 3C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V9L13 3H7Z" fill="currentColor" fillOpacity="0.3"/>
-                    <path d="M13 3V8C13 8.55 13.45 9 14 9H19" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M8 12H16M8 15H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <span className="text-lg font-bold text-slate-800">DOKit</span>
+            <div className="flex items-center gap-2">
+              <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                <svg width="20" height="20" className="text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7 3C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V9L13 3H7Z" fillOpacity="0.3"/>
+                  <path d="M13 3V8C13 8.55 13.45 9 14 9H19" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+                </svg>
               </div>
-              <div className="text-xs text-slate-400 border-l border-slate-200 pl-3">Stano Law</div>
+              <div>
+                <span className="text-lg font-bold text-slate-800">DOKit</span>
+                <div className="text-xs text-slate-400">Stano Law Firm</div>
+              </div>
             </div>
             <button 
               onClick={() => setSidebarOpen(false)}
@@ -215,7 +217,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* Main Content */}
-      <main className="lg:ml-64 pt-14 lg:pt-0">
+      <main className="lg:pl-64 pt-14 lg:pt-0 min-h-screen">
         {children}
       </main>
     </div>

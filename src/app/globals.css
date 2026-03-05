@@ -10,8 +10,7 @@ body {
 
 /* DOKit Brand Styles */
 .gradient-bg {
-  background: linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #faf8ff 100%);
-  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 50%, #f5f3ff 100%);
 }
 
 .glass-card {
